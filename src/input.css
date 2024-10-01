@@ -1,0 +1,225 @@
+/* src/styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic); 
+
+@tailwind base;
+@tailwind components;
+
+html {
+  background-color: #303030;
+  color: #8a8a8a;
+  font-family: 'Inria Sans','Lato', Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 200;
+  text-transform: uppercase;
+} 
+* {
+  border: 0 solid rgba(255, 255, 255, 0.344);
+}
+/* Map controls, sometimes overriding styles from OpenLayers. */
+#_map .ol-control {
+  background: transparent;
+  padding: 10px;
+  border-radius: 0;
+}
+
+#_map .ol-control button {
+  color: #303030;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 1.5em; 
+  height: 1.5em; 
+  font-size: 1em;
+  line-height: 1.5em; 
+  padding: 0.2em; 
+  border-radius: 0.1em;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+
+#_map .ol-control button:active {
+  color: #242424;
+  background: #ffcc2f;
+} 
+
+#_map .ol-zoom {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 0.5em;
+  bottom: 0.5em;
+  z-index: 2;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#_map .ol-zoom > button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-left: 0.2em;
+}
+
+#rotate-button-div,
+#speed-limit,
+#map-text {
+  /* Hiding the custom controls until they are added to the map. */
+  display: none;
+}
+
+#_map #rotate-button-div {
+  display: block;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 2;
+}
+
+#_map #rotate-button > svg {
+  display: inline-block;
+  will-change: transform;
+}
+
+#_map #speed-limit {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  z-index: 2;
+  background: rgb(255, 255, 255);
+  color: rgb(37, 35, 35);
+  font-weight: bold;
+  line-height: 1.0;
+  width: 1em;               
+  height: 1em;
+  padding: 15px;            
+  text-align: center;
+  display: flex;              
+  justify-content: center;    
+  align-items: center;        
+  box-sizing: border-box;     
+}
+
+
+#speed-limit[data-game-name="ETS2"] {
+  border-radius: 100%;
+  border: 0.25em solid red;
+}
+
+#_map #map-text {
+  display: block;
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  z-index: 1;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: left;
+}
+
+/* Overlay message. */
+#_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#_overlay > .statusMessage {
+  flex-grow: 0;
+  padding: 1em;
+  border: 0.2em white solid;
+  border-radius: 0.5em;
+  background: black;
+  color: white;
+}
+
+@keyframes flicker-animation {
+  0%, 100% {
+    opacity: 1; 
+  }
+  50% {
+    opacity: 0; 
+  }
+}
+
+/* Icons that fill up according to some percentage. */
+.fillingIcon {
+  display: inline-block;
+  position: relative;
+}
+.fillingIcon > .top {
+  position: absolute;
+  overflow: hidden;
+}
+.fillingIcon > .top > *,
+.fillingIcon > .bot > * {
+  display: block;
+}
+
+.isEts2[data-value="false"] {
+  display: none;
+}
+ 
+.isEts2[data-value="true"] {
+  display: block;
+}
+
+.isAts[data-value="false"] {
+  display: none;
+}
+
+.isAts[data-value="true"] {
+  display: block;
+}
+
+@tailwind utilities;
+
+/* For wider screens (aspect ratio greater than 4:3) */
+@media (min-aspect-ratio: 4/3) {
+  html {
+    font-size: 1.8vh; 
+  }
+  html h1 {
+    font-size: calc(1.8vh * 1.8); 
+  }
+  html h2 {
+    font-size: calc(1.8vh);  
+  }
+  html h3 {
+    font-size: calc(1.5vh);
+  }
+  html p {
+    font-size: calc(1.6vh * 2.8); 
+  }
+}
+
+/* For narrower screens (aspect ratio less than or equal to 4:3) */
+@media (max-aspect-ratio: 4/3) {
+  html {
+    font-size: 1.3vw; 
+  }
+  html h1 {
+    font-size: calc(1.3vw * 1.8); 
+  }
+  html h2 {
+    font-size: calc(1.3vw); 
+  }
+  html h3 {
+    font-size: calc(1vw);
+  }
+  html p {
+    font-size: calc(1.3vw * 2.8);
+  }
+}

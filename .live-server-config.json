@@ -1,0 +1,12 @@
+{
+	"port": 3000,
+	"host": "0.0.0.0",
+	"root": "./ets2-telemetry-server/server/Html/skins/truck-monitor/d",
+	"open": false,
+	"ignore": "scss,myTemplates",
+	"file": "dashboard.html",
+	"wait": 1000,
+	"mount": [["/components", "./node_modules"]],
+	"logLevel": 2
+  }
+  
