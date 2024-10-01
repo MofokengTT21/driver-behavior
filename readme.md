@@ -59,7 +59,7 @@ To get started with this project, follow these steps:
    ```
 Here is a screenshot of how the dashboard will look like in a browser:
 
-![](https://github.com/MofokengTT21/driver-behavior/blob/main/ets2-telemetry-server/server/Html/skins/truck-monitor/dashboard.jpg?raw=true)
+![](https://github.com/MofokengTT21/driver-behavior/blob/main/screenshot.png?raw=true)
    
 
 ## Usage
