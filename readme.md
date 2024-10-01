@@ -53,7 +53,7 @@ To get started with this project, follow these steps:
 4. **Access the Dashboard:**
    - Open your browser and navigate to the HTML5 mobile dashboard URL displayed by the ETS2 Telemetry Web Server.
    - Select the **Truck Monitoring Simulator** skin to visualize real-time telemetry data and driver behavior predictions.
-![](ets2-telemetry-server\server\Html\skins\truck-monitor\dashboard.jpg)
+![](https://github.com/MofokengTT21/driver-behavior/blob/main/ets2-telemetry-server/server/Html/skins/truck-monitor/dashboard.jpg?raw=true)
    
 
 ## Usage
